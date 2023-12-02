@@ -1,9 +1,9 @@
 import {UserController} from "../../domain/user/user.controller.js";
-import {servicesDIContainer} from "./services.js";
+import {services} from "./services.js";
 
-export const controllersDIContainer = () => {
-    const services = servicesDIContainer()
 
+const controllersDIContainer = () => {
+    console.log('controllersDIContainer')
     const userService = services.userService
 
     const userController = new UserController({ userService  })
@@ -11,3 +11,5 @@ export const controllersDIContainer = () => {
         userController
     }
 }
+
+export const controllers = controllersDIContainer()

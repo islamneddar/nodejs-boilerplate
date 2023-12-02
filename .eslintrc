@@ -1,0 +1,20 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 80,
+      "tabWidth": 2,
+      "useTabs": false,
+      "semi": 1,
+      "singleQuote": false,
+      "quoteProps": "as-needed",
+      "trailingComma": "none",
+      "bracketSpacing": true,
+      "arrowParens": "always",
+      "parser": "babel", // flow
+      "requirePragma": true,
+      "insertPragma": true
+    }]
+  }
+}
