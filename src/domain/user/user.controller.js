@@ -1,9 +1,9 @@
 import statusResponse from "../../common/constant/status-response.js";
 
 export class UserController {
-    #userService;
-    constructor({ userService }) {
+    constructor({ userService, fileStorageService }) {
         this.userService = userService;
+        this.fileStorageService = fileStorageService;
     }
 
     async getAll(req, res, next) {

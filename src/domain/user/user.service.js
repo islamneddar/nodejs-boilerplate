@@ -4,7 +4,12 @@ export class UserService {
     }
 
     async getAll() {
-        return await this.userRepository.findMany();
+        return await this.userRepository.findMany({
+            include : {
+                posts : true,
+                profile : true
+            }
+        });
     }
 
     async create({email, name}) {
@@ -20,6 +25,17 @@ export class UserService {
         return await this.userRepository.findUnique({
             where: {
                 email
+            }
+        });
+    }
+
+    async findOneByIdAndEmail(id, email) {
+        return await this.userRepository.findUnique({
+            where: {
+                id_email: {
+                    id,
+                    email
+                }
             }
         });
     }

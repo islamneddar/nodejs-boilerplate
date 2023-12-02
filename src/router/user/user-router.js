@@ -1,11 +1,11 @@
 import {Router} from "express";
-import {controllers} from "../../middleware/dependency-injection/controllers.js";
+import {controllersDi} from "../../middleware/dependency-injection/controllers-di.js";
 import {userCreationBodyValidator} from "./user.validations.js";
 import {responseHandler} from "../response-handler.js";
 
 const userRouter = Router()
 
-const userController = controllers.userController
+const userController = controllersDi.userController
 
 
 userRouter.get("/",
